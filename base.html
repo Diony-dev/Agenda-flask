@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{% block tittle %}Titulo por defecto{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+        <h1>My Aplicacion</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a>
+
+            <a href="{{ url_for('perfil_usuario', username = 'nombre_usuario')  }}">Perfil</a>
+        </nav>
+        {% endblock  %}
+    </header>
+    <main>
+        {% block content %}
+        <h2>Contenido principal</h2>
+        <p>Este es el contenido por defecto.</p>
+        {% endblock %}
+    </main>
+
+
+
+    <footer>
+        {% block footer %}
+        <p>© 2023 My Aplicacion</p>
+        {% endblock %}
+    </footer>
+</body>
+</html>

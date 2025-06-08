@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+{% block content %}
+<div class="container-main"  >
+<h1>  Contactos Registrados</h1>
+{% if contactos %}
+  
+    {% for contacto in contactos %}
+    <div class="contac-list">
+    <span><strong>Nombre</strong>: {{ contacto.nombre }}</span><br>
+        <span><strong> Email</strong>: {{ contacto.email }}</span><br>
+        <span><strong> Telefono</strong>: {{contacto.telefono}}</span>
+        <form action="{{ url_for('delete', contact_id= contacto.id) }}" method="POST">
+            <button type="submit" class="btn-delete">Eliminar</button>
+        </form>
+        <form action="{{ url_for('update', contact_id= contacto.id) }}" method="GET">
+            <button type="submit" class="btn-update">Actualizar</button>
+        </form>
+    </div>
+    {% endfor %}
+
+{% elif message != '' %}
+   <p>{{mensage}}</p>  
+{% endif %}
+</div>
+{% endblock %}
+
+
+

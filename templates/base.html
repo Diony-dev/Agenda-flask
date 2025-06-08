@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   
+    <title>{% block title %}titulo por defecto{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+        <div class="logo-container">
+       <img class ="logo_nav"src="{{ url_for('static', filename='source/logo.png') }}" alt="Logo" class="logo">
+        <h1>Mi Agenda</h1>
+        </div>
+        <nav>
+           
+            <li><a href="{{ url_for('index') }}">Inicio</a></li>
+            <li><a href="{{ url_for('add') }}">agregar</a></li>
+        </nav>
+        {% endblock %}
+    </header>
+
+    <main>
+        {% block content %}
+        <h2>Contenido principal</h2>
+        <p>Este es el contenido por defecto.</p>
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <p>© 2025 Mi Aplicación</p>
+        {% endblock %}
+    </footer>
+    
+</body>
+</html>
