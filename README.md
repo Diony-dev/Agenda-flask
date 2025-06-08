@@ -102,7 +102,7 @@ Este proyecto está bajo la licencia [Ej: MIT License / Apache 2.0 License].
 
 ## 🧑‍💻 Autor
 
-[Tu Nombre o Nombre de Usuario en GitHub] - [Tu Email o Perfil de GitHub]
+Diony junior Diaz - @Diony-dev
 
 ---
 ```
